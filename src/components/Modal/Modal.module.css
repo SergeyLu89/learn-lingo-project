@@ -1,0 +1,44 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 20, 23, 0.5);
+  visibility: visible;
+  opacity: 1;
+  overflow: auto;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 541px;
+  max-height: 90%;
+  padding: 40px;
+  border-radius: 24px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: #fff;
+}
+.backdrop .modal {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* .modalCloseBtn {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  } */
