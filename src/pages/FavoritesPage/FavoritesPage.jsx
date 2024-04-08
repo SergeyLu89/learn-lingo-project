@@ -1,4 +1,4 @@
-// import css from './FavoritePage.module.css';
+// import css from './FavoritesPage.module.css';
 
 const FavoritePage = () => {
   return (

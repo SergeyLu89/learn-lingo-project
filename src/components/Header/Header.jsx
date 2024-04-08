@@ -17,9 +17,9 @@ const Header = () => {
         className={({ isActive }) =>
           ` ${isActive ? css.active : css.headerNavLink}`
         }
-        to="/catalog"
+        to="/teachers"
       >
-        Catalog
+        Teachers
       </NavLink>
       <NavLink
         className={({ isActive }) =>
