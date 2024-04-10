@@ -38,7 +38,6 @@ const Modal = ({ children, isOpen, closeFnc }) => {
         </button>
         {children}
       </div>
-      ;
     </div>
   );
 };

@@ -4,8 +4,13 @@ import { NavLink } from 'react-router-dom';
 import Modal from 'components/Modal/Modal';
 import SignInForm from 'components/AuthForms/SignInForm/SignInForm';
 import SignUpForm from 'components/AuthForms/SignUpForm/SignUpForm';
+import { useAuth } from 'hooks/useAuth';
+import { useDispatch } from 'react-redux';
+import { removeUser } from '../../redux/user/userReudcer';
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const isAuth = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [onLogInClick, setOnLogInClick] = useState(false);
 
@@ -43,18 +48,26 @@ const Header = () => {
       >
         Favorites
       </NavLink>
-      <button
-        type="butoon"
-        onClick={() => {
-          openModal();
-          setOnLogInClick(true);
-        }}
-      >
-        Log in
-      </button>
-      <button type="butoon" onClick={openModal}>
-        Registration
-      </button>
+
+      {isAuth ? (
+        <button onClick={() => dispatch(removeUser())}>Log out</button>
+      ) : (
+        <div>
+          <button
+            type="butoon"
+            onClick={() => {
+              openModal();
+              setOnLogInClick(true);
+            }}
+          >
+            Log in
+          </button>
+          <button type="butoon" onClick={openModal}>
+            Registration
+          </button>
+        </div>
+      )}
+
       {isOpen && (
         <Modal
           isOpen={isOpen}
@@ -63,7 +76,11 @@ const Header = () => {
             setOnLogInClick(false);
           }}
         >
-          {onLogInClick ? <SignInForm /> : <SignUpForm />}
+          {onLogInClick ? (
+            <SignInForm closeFnc={closeModal} />
+          ) : (
+            <SignUpForm closeFnc={closeModal} />
+          )}
         </Modal>
       )}
     </nav>

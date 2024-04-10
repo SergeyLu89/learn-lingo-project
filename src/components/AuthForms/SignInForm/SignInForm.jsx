@@ -1,6 +1,10 @@
 import css from './SignInForm.module.css';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { setUser } from '../../../redux/user/userReudcer';
 
 const initialValues = {
   email: '',
@@ -11,10 +15,33 @@ const schema = Yup.object({
   password: Yup.string().min(4).max(16).required(),
 });
 
-const SignInForm = () => {
-  const onFormSubmit = (values, { resetForm }) => {
-    console.log(values);
+const SignInForm = ({ closeFnc }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onFormSubmit = ({ email, password }, { resetForm }) => {
+    console.log('email: ', email);
+    console.log('password: ', password);
+
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        console.log('user: ', user);
+        dispatch(
+          setUser({
+            name: user.displayName,
+            email: user.email,
+            token: user.accessToken,
+            id: user.uid,
+          }),
+          []
+        );
+      })
+      .catch(console.error);
     resetForm();
+    closeFnc();
+    alert('Hello');
+    navigate('/home');
   };
   return (
     <>
