@@ -3,7 +3,7 @@ import Layout from 'components/Layout/Layout';
 import { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { setUser } from './redux/user/userReudcer';
+import { setUser, removeUser } from './redux/user/userReudcer';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const TeachersPage = lazy(() => import('./pages/TeachersPage/TeachersPage'));
@@ -18,7 +18,7 @@ export const App = () => {
         console.log('user: ', user);
         dispatch(setUser(user));
       } else {
-        dispatch(setUser(undefined));
+        dispatch(removeUser());
       }
     });
   }, [auth, dispatch]);

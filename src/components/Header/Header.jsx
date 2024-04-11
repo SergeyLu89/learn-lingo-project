@@ -7,10 +7,12 @@ import SignUpForm from 'components/AuthForms/SignUpForm/SignUpForm';
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { removeUser } from '../../redux/user/userReudcer';
+import { getAuth, signOut } from 'firebase/auth';
 
 const Header = () => {
   const dispatch = useDispatch();
   const isAuth = useAuth();
+  const auth = getAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [onLogInClick, setOnLogInClick] = useState(false);
 
@@ -50,7 +52,15 @@ const Header = () => {
       </NavLink>
 
       {isAuth ? (
-        <button onClick={() => dispatch(removeUser())}>Log out</button>
+        <button
+          onClick={() => {
+            signOut(auth);
+            console.log('ВЫШЛИ');
+            dispatch(removeUser());
+          }}
+        >
+          Log out
+        </button>
       ) : (
         <div>
           <button
