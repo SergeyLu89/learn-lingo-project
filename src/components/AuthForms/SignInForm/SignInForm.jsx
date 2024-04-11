@@ -25,17 +25,10 @@ const SignInForm = ({ closeFnc }) => {
 
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
+      .then(userCredential => {
+        const user = userCredential.user;
         console.log('user: ', user);
-        dispatch(
-          setUser({
-            name: user.displayName,
-            email: user.email,
-            token: user.accessToken,
-            id: user.uid,
-          }),
-          []
-        );
+        dispatch(setUser(user));
       })
       .catch(console.error);
     resetForm();

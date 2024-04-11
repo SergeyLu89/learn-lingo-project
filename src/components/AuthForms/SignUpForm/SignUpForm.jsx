@@ -27,44 +27,18 @@ const SignUpForm = ({ closeFnc }) => {
   const navigate = useNavigate();
   const auth = getAuth();
 
-  // const onFormSubmit = ({ name, email, password }, { resetForm }) => {
-  //   const auth = getAuth();
-
-  // createUserWithEmailAndPassword(auth, email, password)
-  //   .then(({ user }) => {
-  //     console.log(user);
-  //     dispath(
-  //       setUser({
-  //         name: user.displayName,
-  //         email: user.email,
-  //         token: user.accessToken,
-  //         id: user.uid,
-  //       }),
-  //       []
-  //     );
-  //   })
   const onFormSubmit = ({ name, email, password }, { resetForm }) => {
     createUserWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
+      .then(userCredential => {
+        const user = userCredential.user;
+
+        console.log('user: ', user);
+
         updateProfile(user, {
           displayName: name,
         });
-        console.log(user);
-        return user;
+        dispatch(setUser(user));
       })
-      .then(user => {
-        dispatch(
-          setUser({
-            // name: user.displayName,
-            name: name,
-            email: user.email,
-            token: user.accessToken,
-            id: user.uid,
-          }),
-          []
-        );
-      })
-
       .catch(console.error);
     resetForm();
     closeFnc();
