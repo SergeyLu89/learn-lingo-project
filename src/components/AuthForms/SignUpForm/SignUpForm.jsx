@@ -42,7 +42,7 @@ const SignUpForm = ({ closeFnc }) => {
       .catch(console.error);
     resetForm();
     closeFnc();
-    alert('Register Succes');
+    // alert('Register Succes');
     navigate('/home');
   };
   return (

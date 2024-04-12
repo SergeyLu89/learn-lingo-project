@@ -20,9 +20,6 @@ const SignInForm = ({ closeFnc }) => {
   const navigate = useNavigate();
 
   const onFormSubmit = ({ email, password }, { resetForm }) => {
-    console.log('email: ', email);
-    console.log('password: ', password);
-
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
@@ -33,7 +30,7 @@ const SignInForm = ({ closeFnc }) => {
       .catch(console.error);
     resetForm();
     closeFnc();
-    alert('Hello');
+    // alert('Hello');
     navigate('/home');
   };
   return (
