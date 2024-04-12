@@ -1,9 +1,10 @@
-.header {
+.navLinkList {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
-/* .headerNavLink {
+.headerNavLink {
   transition: background-color var(--general-transition);
 }
 .headerNavLink:hover,
@@ -12,4 +13,4 @@
 }
 .active {
   color: #0b44cd;
-} */
+}
