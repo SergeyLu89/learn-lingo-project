@@ -1,6 +1,6 @@
 // import css from './TeachersList.module.css';
 import TeachersListItem from 'components/TeachersListItem/TeachersListItem';
-// import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid';
 
 const TeachersList = ({ teachers }) => {
   console.log('teachers LIST: ', teachers);
@@ -9,7 +9,7 @@ const TeachersList = ({ teachers }) => {
     <>
       <ul>
         {teachers.map(teacher => (
-          <TeachersListItem teacher={teacher} />
+          <TeachersListItem teacher={teacher} key={nanoid()} />
         ))}
       </ul>
     </>
