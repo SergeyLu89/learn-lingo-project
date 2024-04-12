@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/learn-lingo-project/static/css/main.6521e502.css",
-    "main.js": "/learn-lingo-project/static/js/main.d9f70e54.js",
+    "main.css": "/learn-lingo-project/static/css/main.37450c2b.css",
+    "main.js": "/learn-lingo-project/static/js/main.ce81f51b.js",
     "static/js/680.7833e0bb.chunk.js": "/learn-lingo-project/static/js/680.7833e0bb.chunk.js",
-    "static/js/532.7cffc701.chunk.js": "/learn-lingo-project/static/js/532.7cffc701.chunk.js",
-    "static/js/413.799f2291.chunk.js": "/learn-lingo-project/static/js/413.799f2291.chunk.js",
+    "static/css/375.31d6cfe0.chunk.css": "/learn-lingo-project/static/css/375.31d6cfe0.chunk.css",
+    "static/js/375.001fc1ee.chunk.js": "/learn-lingo-project/static/js/375.001fc1ee.chunk.js",
+    "static/js/413.b36712bc.chunk.js": "/learn-lingo-project/static/js/413.b36712bc.chunk.js",
     "static/media/Roboto-Medium.ttf": "/learn-lingo-project/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
     "static/media/Roboto-Regular.ttf": "/learn-lingo-project/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/learn-lingo-project/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "index.html": "/learn-lingo-project/index.html",
-    "main.6521e502.css.map": "/learn-lingo-project/static/css/main.6521e502.css.map",
-    "main.d9f70e54.js.map": "/learn-lingo-project/static/js/main.d9f70e54.js.map",
+    "main.37450c2b.css.map": "/learn-lingo-project/static/css/main.37450c2b.css.map",
+    "main.ce81f51b.js.map": "/learn-lingo-project/static/js/main.ce81f51b.js.map",
     "680.7833e0bb.chunk.js.map": "/learn-lingo-project/static/js/680.7833e0bb.chunk.js.map",
-    "532.7cffc701.chunk.js.map": "/learn-lingo-project/static/js/532.7cffc701.chunk.js.map",
-    "413.799f2291.chunk.js.map": "/learn-lingo-project/static/js/413.799f2291.chunk.js.map"
+    "375.001fc1ee.chunk.js.map": "/learn-lingo-project/static/js/375.001fc1ee.chunk.js.map",
+    "413.b36712bc.chunk.js.map": "/learn-lingo-project/static/js/413.b36712bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6521e502.css",
-    "static/js/main.d9f70e54.js"
+    "static/css/main.37450c2b.css",
+    "static/js/main.ce81f51b.js"
   ]
 }
