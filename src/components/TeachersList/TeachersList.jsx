@@ -3,8 +3,6 @@ import TeachersListItem from 'components/TeachersListItem/TeachersListItem';
 import { nanoid } from 'nanoid';
 
 const TeachersList = ({ teachers }) => {
-  console.log('teachers LIST: ', teachers);
-
   return (
     <>
       <ul>
