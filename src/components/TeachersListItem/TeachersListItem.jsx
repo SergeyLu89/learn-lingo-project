@@ -1,16 +1,27 @@
 import css from './TeachersListItem.module.css';
 import sprite from '../../assets/sprite.svg';
 import { defaultAvatar } from 'helpers/defaultImg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavoritesTeachers } from '../../redux/favoritesTeachers/favoritesTeachersSelectors';
+import {
+  addFavoriteTeacher,
+  removeFavoriteTeacher,
+} from '../../redux/favoritesTeachers/favoritesTeachersReducer';
 
 const TeachersListItem = ({ teacher }) => {
   const dispatch = useDispatch();
+  const favoritesTeachers = useSelector(selectFavoritesTeachers);
 
-  // const onFavoriteToggle = () => {
-  //   dispatch(
-  //     isFavorite ? removeFavoriteAdvert(advert) : addFavoriteAdvert(advert)
-  //   );
-  // };
+  const isFavorite = favoritesTeachers?.some(
+    favoriteteacher => favoriteteacher.id === teacher.id
+  );
+
+  const onFavoriteToggle = () => {
+    console.log('favoritesTeachers: ', favoritesTeachers);
+    dispatch(
+      isFavorite ? removeFavoriteTeacher(teacher) : addFavoriteTeacher(teacher)
+    );
+  };
   const {
     avatar_url,
     conditions,
@@ -31,13 +42,13 @@ const TeachersListItem = ({ teacher }) => {
         <button
           type="button"
           className={css.favoriteBtn}
-          // onClick={onFavoriteToggle}
+          onClick={onFavoriteToggle}
         >
           {/* <FavoriteSvg
             fill={isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent'}
             stroke={isFavorite ? 'rgba(52, 112, 255, 1)' : 'white'}
           /> */}
-          <svg>
+          <svg width="26" height="26">
             <use href={sprite + '#icon-heart'}></use>
           </svg>
         </button>

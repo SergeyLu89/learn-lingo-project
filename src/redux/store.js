@@ -9,12 +9,12 @@ import {
 } from 'redux-persist';
 import persistStore from 'redux-persist/es/persistStore';
 import { userReducer } from './user/userReudcer';
-// import { advertsReducer } from './adverts/advertsReduser';
+import { favoritesReducer } from './favoritesTeachers/favoritesTeachersReducer';
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    // adverts: advertsReducer,
+    favorites: favoritesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
