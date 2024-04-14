@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/learn-lingo-project/static/css/main.37450c2b.css",
-    "main.js": "/learn-lingo-project/static/js/main.79dd0445.js",
+    "main.js": "/learn-lingo-project/static/js/main.7f57dbe6.js",
     "static/js/680.7833e0bb.chunk.js": "/learn-lingo-project/static/js/680.7833e0bb.chunk.js",
-    "static/css/375.31d6cfe0.chunk.css": "/learn-lingo-project/static/css/375.31d6cfe0.chunk.css",
-    "static/js/375.8a130440.chunk.js": "/learn-lingo-project/static/js/375.8a130440.chunk.js",
+    "static/css/597.31d6cfe0.chunk.css": "/learn-lingo-project/static/css/597.31d6cfe0.chunk.css",
+    "static/js/597.bbb8725f.chunk.js": "/learn-lingo-project/static/js/597.bbb8725f.chunk.js",
     "static/js/413.b36712bc.chunk.js": "/learn-lingo-project/static/js/413.b36712bc.chunk.js",
     "static/media/Roboto-Medium.ttf": "/learn-lingo-project/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
     "static/media/Roboto-Regular.ttf": "/learn-lingo-project/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/learn-lingo-project/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
+    "static/media/sprite.svg": "/learn-lingo-project/static/media/sprite.762f7a00d7a7d1c2d199a6bb08d61776.svg",
     "index.html": "/learn-lingo-project/index.html",
     "main.37450c2b.css.map": "/learn-lingo-project/static/css/main.37450c2b.css.map",
-    "main.79dd0445.js.map": "/learn-lingo-project/static/js/main.79dd0445.js.map",
+    "main.7f57dbe6.js.map": "/learn-lingo-project/static/js/main.7f57dbe6.js.map",
     "680.7833e0bb.chunk.js.map": "/learn-lingo-project/static/js/680.7833e0bb.chunk.js.map",
-    "375.8a130440.chunk.js.map": "/learn-lingo-project/static/js/375.8a130440.chunk.js.map",
+    "597.bbb8725f.chunk.js.map": "/learn-lingo-project/static/js/597.bbb8725f.chunk.js.map",
     "413.b36712bc.chunk.js.map": "/learn-lingo-project/static/js/413.b36712bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.37450c2b.css",
-    "static/js/main.79dd0445.js"
+    "static/js/main.7f57dbe6.js"
   ]
 }
