@@ -39,75 +39,124 @@ const TeachersListItem = ({ teacher }) => {
   return (
     <>
       <li className={css.teachersListItem}>
-        <button
+        {/* <button
           type="button"
           className={css.favoriteBtn}
           onClick={onFavoriteToggle}
         >
-          {/* <FavoriteSvg
-            fill={isFavorite ? 'rgba(52, 112, 255, 1)' : 'transparent'}
-            stroke={isFavorite ? 'rgba(52, 112, 255, 1)' : 'white'}
-          /> */}
-          <svg width="26" height="26">
+          <svg
+            width="26"
+            height="26"
+            aria-label="heart icon"
+            fill={isFavorite ? '#FFC531' : 'transparent'}
+            stroke={isFavorite ? '#FFC531' : '#121417'}
+          >
             <use href={sprite + '#icon-heart'}></use>
           </svg>
-        </button>
-
-        <img
-          src={avatar_url ? avatar_url : defaultAvatar}
-          alt={`${name} ${surname}`}
-          className={css.listItemImg}
-        />
-        <div>
+        </button> */}
+        <div className={css.avatarBox}>
+          <img
+            src={avatar_url ? avatar_url : defaultAvatar}
+            alt={`${name} ${surname}`}
+            className={css.avatarImg}
+          />
+          <svg
+            width="12"
+            height="12"
+            aria-label="online status icon"
+            className={css.onlineStatusIcon}
+          >
+            <use href={sprite + '#icon-online'}></use>
+          </svg>
+        </div>
+        <div className={css.descriptionBox}>
           <div>
-            <p>Languages</p>
+            <div>
+              <p>Languages</p>
+              <h3>
+                {name} {surname}
+              </h3>
+            </div>
+            <div className={css.lessonsInfoBox}>
+              <ul className={css.lessonsInfoList}>
+                <li className={css.lessonsInfoListItem}>
+                  <svg
+                    width="16"
+                    height="16"
+                    aria-label="book icon"
+                    fill="transparent"
+                    stroke="#121417"
+                  >
+                    <use href={sprite + '#icon-book'}></use>
+                  </svg>
+                  Lessons online
+                </li>
+                <li>Lessons done: {lessons_done}</li>
+                <li className={css.lessonsInfoListItem}>
+                  <svg width="16" height="16" aria-label="star icon">
+                    <use href={sprite + '#icon-star'}></use>
+                  </svg>
+                  Rating: {rating}
+                </li>
+                <li>
+                  Price / 1 hour:{' '}
+                  <span className={css.lessonsInfoListItemAccent}>
+                    {price_per_hour}$
+                  </span>
+                </li>
+              </ul>
+              <button
+                type="button"
+                className={css.favoriteBtn}
+                onClick={onFavoriteToggle}
+              >
+                <svg
+                  width="26"
+                  height="26"
+                  aria-label="heart icon"
+                  fill={isFavorite ? '#FFC531' : 'transparent'}
+                  stroke={isFavorite ? '#FFC531' : '#121417'}
+                >
+                  <use href={sprite + '#icon-heart'}></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <span>Speaks:</span>
+              {languages.join(', ')}
+            </li>
+            <li>
+              <span>Lesson Info:</span>
+              {lesson_info}
+            </li>
+            <li>
+              <span>Conditions:</span>
+              {conditions}
+            </li>
+          </ul>
+          <button type="button">Read more</button>
+          <div>
+            <p>{experience}</p>
             <ul>
-              <li>Lessons online</li>
-              <li>Lessons done: {lessons_done}</li>
-              <li>Rating: {rating}</li>
-              <li>
-                Price / 1 hour: <span>{price_per_hour}$</span>
-              </li>
+              {reviews?.map((rewiew, index) => (
+                <li key={index}>
+                  <img src="" alt="" />
+                  <p>{rewiew.reviewer_name}</p>
+                  <p>{rewiew.reviewer_rating}</p>
+                  <p>{rewiew.comment}</p>
+                </li>
+              ))}
             </ul>
           </div>
-        </div>
-        <h3>
-          {name} {surname}
-        </h3>
-        <ul>
-          <li>
-            <span>Speaks:</span>
-            {languages.join(', ')}
-          </li>
-          <li>
-            <span>Lesson Info:</span>
-            {lesson_info}
-          </li>
-          <li>
-            <span>Conditions:</span>
-            {conditions}
-          </li>
-        </ul>
-        <button type="button">Read more</button>
-        <div>
-          <p>{experience}</p>
           <ul>
-            {reviews?.map((rewiew, index) => (
-              <li key={index}>
-                <img src="" alt="" />
-                <p>{rewiew.reviewer_name}</p>
-                <p>{rewiew.reviewer_rating}</p>
-                <p>{rewiew.comment}</p>
-              </li>
+            {levels?.map((level, index) => (
+              <li key={index}>{level}</li>
             ))}
           </ul>
+          <button type="button">Book trial lesson</button>
         </div>
-        <ul>
-          {levels?.map((level, index) => (
-            <li key={index}>{level}</li>
-          ))}
-        </ul>
-        <button type="button">Book trial lesson</button>
       </li>
     </>
   );

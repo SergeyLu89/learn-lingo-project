@@ -1,4 +1,4 @@
-// import css from './TeachersPage.module.css';
+import css from './TeachersPage.module.css';
 import { getDatabase, ref, child, get } from 'firebase/database';
 import TeachersList from 'components/TeachersList/TeachersList';
 import { useEffect, useState } from 'react';
@@ -12,7 +12,6 @@ const TeachersPage = () => {
       .then(snapshot => {
         if (snapshot.exists()) {
           const data = snapshot.val();
-          console.log('data: ', data);
           setTeachers(data);
         } else {
           console.log('No data available');
@@ -24,10 +23,9 @@ const TeachersPage = () => {
   }, [dbRef]);
 
   return (
-    <>
-      <h2>Our teachers</h2>
+    <section className={css.teachersPageSection}>
       <TeachersList teachers={teachers} />
-    </>
+    </section>
   );
 };
 export default TeachersPage;
