@@ -3,6 +3,7 @@ import sprite from '../../assets/sprite.svg';
 import { defaultAvatar } from 'helpers/defaultImg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavoritesTeachers } from '../../redux/favoritesTeachers/favoritesTeachersSelectors';
+import { selectUserIsLoggedIn } from '../../redux/user/userSelectors';
 import {
   addFavoriteTeacher,
   removeFavoriteTeacher,
@@ -11,6 +12,7 @@ import {
 const TeachersListItem = ({ teacher }) => {
   const dispatch = useDispatch();
   const favoritesTeachers = useSelector(selectFavoritesTeachers);
+  const isLogin = useSelector(selectUserIsLoggedIn);
 
   const isFavorite = favoritesTeachers?.some(
     favoriteteacher => favoriteteacher.id === teacher.id
@@ -108,7 +110,11 @@ const TeachersListItem = ({ teacher }) => {
               <button
                 type="button"
                 className={css.favoriteBtn}
-                onClick={onFavoriteToggle}
+                onClick={() => {
+                  isLogin
+                    ? onFavoriteToggle()
+                    : alert('Оnly authorized users can add cards to favorites');
+                }}
               >
                 <svg
                   width="26"
