@@ -8,18 +8,30 @@ import {
   addFavoriteTeacher,
   removeFavoriteTeacher,
 } from '../../redux/favoritesTeachers/favoritesTeachersReducer';
+import { useState } from 'react';
+import Modal from 'components/Modal/Modal';
+import TrialLessonFormComponent from 'components/TrialLessonFormComponent/TrialLessonFormComponent';
 
 const TeachersListItem = ({ teacher }) => {
   const dispatch = useDispatch();
   const favoritesTeachers = useSelector(selectFavoritesTeachers);
   const isLogin = useSelector(selectUserIsLoggedIn);
+  const [isReadMore, setIsReadMore] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   const isFavorite = favoritesTeachers?.some(
     favoriteteacher => favoriteteacher.id === teacher.id
   );
 
   const onFavoriteToggle = () => {
-    console.log('favoritesTeachers: ', favoritesTeachers);
     dispatch(
       isFavorite ? removeFavoriteTeacher(teacher) : addFavoriteTeacher(teacher)
     );
@@ -142,28 +154,43 @@ const TeachersListItem = ({ teacher }) => {
               {conditions}
             </li>
           </ul>
-          <button type="button">Read more</button>
-          <div>
-            <p>{experience}</p>
-            <ul>
-              {reviews?.map((rewiew, index) => (
-                <li key={index}>
-                  <img src="" alt="" />
-                  <p>{rewiew.reviewer_name}</p>
-                  <p>{rewiew.reviewer_rating}</p>
-                  <p>{rewiew.comment}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {isReadMore ? (
+            <button type="button" onClick={() => setIsReadMore(false)}>
+              Read more
+            </button>
+          ) : (
+            <div>
+              <p>{experience}</p>
+              <ul>
+                {reviews?.map((rewiew, index) => (
+                  <li key={index}>
+                    <img src="" alt="" />
+                    <p>{rewiew.reviewer_name}</p>
+                    <p>{rewiew.reviewer_rating}</p>
+                    <p>{rewiew.comment}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <ul>
             {levels?.map((level, index) => (
               <li key={index}>{level}</li>
             ))}
           </ul>
-          <button type="button">Book trial lesson</button>
+          {!isReadMore && (
+            <button type="button" onClick={openModal}>
+              Book trial lesson
+            </button>
+          )}
         </div>
       </li>
+      {isOpen && (
+        <Modal isOpen={isOpen} closeFnc={closeModal}>
+          <TrialLessonFormComponent teacher={teacher} />
+        </Modal>
+      )}
     </>
   );
 };
