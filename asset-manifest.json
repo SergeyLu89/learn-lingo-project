@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/learn-lingo-project/static/css/main.afb5370a.css",
-    "main.js": "/learn-lingo-project/static/js/main.b18c8ad6.js",
+    "main.js": "/learn-lingo-project/static/js/main.2bdad74e.js",
     "static/js/680.9c04a596.chunk.js": "/learn-lingo-project/static/js/680.9c04a596.chunk.js",
     "static/css/861.37461325.chunk.css": "/learn-lingo-project/static/css/861.37461325.chunk.css",
-    "static/js/861.f37d921b.chunk.js": "/learn-lingo-project/static/js/861.f37d921b.chunk.js",
+    "static/js/861.67d2836d.chunk.js": "/learn-lingo-project/static/js/861.67d2836d.chunk.js",
     "static/css/413.b5a10ddf.chunk.css": "/learn-lingo-project/static/css/413.b5a10ddf.chunk.css",
     "static/js/413.e36755a5.chunk.js": "/learn-lingo-project/static/js/413.e36755a5.chunk.js",
     "static/media/Roboto-Medium.ttf": "/learn-lingo-project/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
@@ -13,15 +13,15 @@
     "static/media/sprite.svg": "/learn-lingo-project/static/media/sprite.54cef8f13ca473cb668a4ed2d14a6abb.svg",
     "index.html": "/learn-lingo-project/index.html",
     "main.afb5370a.css.map": "/learn-lingo-project/static/css/main.afb5370a.css.map",
-    "main.b18c8ad6.js.map": "/learn-lingo-project/static/js/main.b18c8ad6.js.map",
+    "main.2bdad74e.js.map": "/learn-lingo-project/static/js/main.2bdad74e.js.map",
     "680.9c04a596.chunk.js.map": "/learn-lingo-project/static/js/680.9c04a596.chunk.js.map",
     "861.37461325.chunk.css.map": "/learn-lingo-project/static/css/861.37461325.chunk.css.map",
-    "861.f37d921b.chunk.js.map": "/learn-lingo-project/static/js/861.f37d921b.chunk.js.map",
+    "861.67d2836d.chunk.js.map": "/learn-lingo-project/static/js/861.67d2836d.chunk.js.map",
     "413.b5a10ddf.chunk.css.map": "/learn-lingo-project/static/css/413.b5a10ddf.chunk.css.map",
     "413.e36755a5.chunk.js.map": "/learn-lingo-project/static/js/413.e36755a5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.afb5370a.css",
-    "static/js/main.b18c8ad6.js"
+    "static/js/main.2bdad74e.js"
   ]
 }
