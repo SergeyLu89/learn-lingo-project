@@ -53,21 +53,6 @@ const TeachersListItem = ({ teacher }) => {
   return (
     <>
       <li className={css.teachersListItem}>
-        {/* <button
-          type="button"
-          className={css.favoriteBtn}
-          onClick={onFavoriteToggle}
-        >
-          <svg
-            width="26"
-            height="26"
-            aria-label="heart icon"
-            fill={isFavorite ? '#FFC531' : 'transparent'}
-            stroke={isFavorite ? '#FFC531' : '#121417'}
-          >
-            <use href={sprite + '#icon-heart'}></use>
-          </svg>
-        </button> */}
         <div className={css.avatarBox}>
           <img
             src={avatar_url ? avatar_url : defaultAvatar}
@@ -84,8 +69,8 @@ const TeachersListItem = ({ teacher }) => {
           </svg>
         </div>
         <div className={css.descriptionBox}>
-          <div>
-            <div>
+          <div className={css.languagesBox}>
+            <div className={css.nameBox}>
               <p>Languages</p>
               <h3>
                 {name} {surname}
@@ -103,20 +88,24 @@ const TeachersListItem = ({ teacher }) => {
                   >
                     <use href={sprite + '#icon-book'}></use>
                   </svg>
-                  Lessons online
+                  <p>Lessons online</p>
                 </li>
-                <li>Lessons done: {lessons_done}</li>
+                <li className={css.lessonsInfoListItem}>
+                  <p>Lessons done: {lessons_done}</p>
+                </li>
                 <li className={css.lessonsInfoListItem}>
                   <svg width="16" height="16" aria-label="star icon">
                     <use href={sprite + '#icon-star'}></use>
                   </svg>
-                  Rating: {rating}
+                  <p>Rating: {rating}</p>
                 </li>
                 <li>
-                  Price / 1 hour:{' '}
-                  <span className={css.lessonsInfoListItemAccent}>
-                    {price_per_hour}$
-                  </span>
+                  <p>
+                    Price / 1 hour:{' '}
+                    <span className={css.lessonsInfoListItemAccent}>
+                      {price_per_hour}$
+                    </span>
+                  </p>
                 </li>
               </ul>
               <button
@@ -125,48 +114,76 @@ const TeachersListItem = ({ teacher }) => {
                 onClick={() => {
                   isLogin
                     ? onFavoriteToggle()
-                    : alert('Оnly authorized users can add cards to favorites');
+                    : alert('Only authorized users can add cards to favorites');
                 }}
               >
                 <svg
                   width="26"
                   height="26"
                   aria-label="heart icon"
-                  fill={isFavorite ? '#FFC531' : 'transparent'}
-                  stroke={isFavorite ? '#FFC531' : '#121417'}
+                  fill={isFavorite ? '#f4c550' : 'transparent'}
+                  stroke={isFavorite ? '#f4c550' : '#121417'}
                 >
                   <use href={sprite + '#icon-heart'}></use>
                 </svg>
               </button>
             </div>
           </div>
-          <ul>
+          <ul className={css.languagesList}>
             <li>
-              <span>Speaks:</span>
-              {languages.join(', ')}
+              <p>
+                <span>Speaks: </span>
+                <span style={{ textDecoration: 'underline', color: '#121417' }}>
+                  {languages.join(', ')}
+                </span>
+              </p>
             </li>
             <li>
-              <span>Lesson Info:</span>
-              {lesson_info}
+              <p>
+                <span>Lesson Info: </span>
+                {lesson_info}
+              </p>
             </li>
             <li>
-              <span>Conditions:</span>
-              {conditions}
+              <p>
+                <span>Conditions: </span>
+                {conditions}
+              </p>
             </li>
           </ul>
           {isReadMore ? (
-            <button type="button" onClick={() => setIsReadMore(false)}>
+            <button
+              type="button"
+              onClick={() => setIsReadMore(false)}
+              className={css.readMoreBtn}
+            >
               Read more
             </button>
           ) : (
-            <div>
-              <p>{experience}</p>
-              <ul>
+            <div className={css.moreInfoBox}>
+              <p className={css.moreInfoBoxDescr}>{experience}</p>
+              <ul className={css.rewiewsList}>
                 {reviews?.map((rewiew, index) => (
                   <li key={index}>
-                    <img src="" alt="" />
-                    <p>{rewiew.reviewer_name}</p>
-                    <p>{rewiew.reviewer_rating}</p>
+                    <div className={css.reviewerInfoBox}>
+                      <img
+                        src={defaultAvatar}
+                        alt={`${rewiew.reviewer_name}`}
+                        className={css.rewiewerAvatar}
+                      />
+                      <div>
+                        <p className={css.rewiewerName}>
+                          {rewiew.reviewer_name}
+                        </p>
+                        <div className={css.reviewerRatingBox}>
+                          <svg width="16" height="16" aria-label="star icon">
+                            <use href={sprite + '#icon-star'}></use>
+                          </svg>
+                          <p>{rewiew.reviewer_rating}.0</p>
+                        </div>
+                      </div>
+                    </div>
+
                     <p>{rewiew.comment}</p>
                   </li>
                 ))}
@@ -174,13 +191,15 @@ const TeachersListItem = ({ teacher }) => {
             </div>
           )}
 
-          <ul>
+          <ul className={css.levelList}>
             {levels?.map((level, index) => (
-              <li key={index}>{level}</li>
+              <li key={index} className={css.levelListItem}>
+                <p>#{level}</p>
+              </li>
             ))}
           </ul>
           {!isReadMore && (
-            <button type="button" onClick={openModal}>
+            <button type="button" onClick={openModal} className={css.bookBtn}>
               Book trial lesson
             </button>
           )}

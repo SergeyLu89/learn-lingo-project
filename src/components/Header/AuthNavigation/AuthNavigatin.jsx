@@ -1,4 +1,5 @@
-// import css from './AuthNavigatin.module.css';
+import css from './AuthNavigatin.module.css';
+import sprite from '../../../assets/sprite.svg';
 import { removeUser } from '../../../redux/user/userReudcer';
 import { getAuth, signOut } from 'firebase/auth';
 import { useState } from 'react';
@@ -26,25 +27,33 @@ const AuthNavigatin = () => {
     <>
       {isAuth ? (
         <button
+          className={css.logBtn}
           onClick={() => {
             signOut(auth);
             dispatch(removeUser());
           }}
         >
+          <svg width="20" height="20" aria-label="log-in icon">
+            <use href={sprite + '#icon-log-out'}></use>
+          </svg>
           Log out
         </button>
       ) : (
-        <div>
+        <div className={css.authNavBtnBox}>
           <button
+            className={css.logBtn}
             type="butoon"
             onClick={() => {
               openModal();
               setOnLogInClick(true);
             }}
           >
+            <svg width="20" height="20" aria-label="log-in icon">
+              <use href={sprite + '#icon-log-in'}></use>
+            </svg>
             Log in
           </button>
-          <button type="butoon" onClick={openModal}>
+          <button type="butoon" onClick={openModal} className={css.registerBtn}>
             Registration
           </button>
         </div>

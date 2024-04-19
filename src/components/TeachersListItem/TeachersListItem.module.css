@@ -9,13 +9,10 @@
   background-color: #fff;
 
   padding: 24px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 24px;
 }
 .favoriteBtn {
-  /* position: absolute; */
-  /* top: 24px;
-  right: 24px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,32 +41,133 @@
 }
 .descriptionBox {
   max-width: 968px;
+  width: 100%;
 }
+.languagesBox {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.nameBox p {
+  color: var(--secondary-text-color);
+}
+.nameBox h3 {
+  white-space: nowrap;
+}
+
 .lessonsInfoBox {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 697px;
+  width: 100%;
 }
-/* .lessonsInfoBox p {
-  color: var(--secondary-text-color);
-} */
+
 .lessonsInfoList {
   display: flex;
 }
 .lessonsInfoListItem {
-  position: relative;
-  padding-left: 24px;
+  display: flex;
+  align-items: center;
 }
 .lessonsInfoListItem svg {
-  position: absolute;
-  left: 0px;
-  top: 4px;
+  margin-right: 4px;
 }
 .lessonsInfoListItemAccent {
   color: #38cd3e;
 }
 
-.lessonsInfoList li:not(:last-child):after {
+.lessonsInfoListItem p:after {
   content: '|';
   margin-left: 16px;
   margin-right: 16px;
   color: rgba(18, 20, 23, 0.2);
+}
+
+.languagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.languagesList span {
+  color: var(--secondary-text-color);
+}
+
+.readMoreBtn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main-text-color);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  margin-bottom: 32px;
+}
+.moreInfoBox {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.moreInfoBoxDescr {
+  font-weight: 400;
+  padding-bottom: 32px;
+}
+.rewiewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.reviewerInfoBox {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+}
+.rewiewerAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.reviewerRatingBox {
+  display: flex;
+  gap: 8px;
+}
+.rewiewerName {
+  color: var(--secondary-text-color);
+}
+.reviewerRatingBox p {
+  font-size: 14px;
+  line-height: 1.28;
+}
+.levelList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.levelListItem {
+  border-radius: 35px;
+  padding: 8px 12px;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  /* background-color: var(--main-color); */
+}
+
+.bookBtn {
+  margin-top: 32px;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 48px;
+  background-color: var(--main-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55;
+  transition: background-color var(--general-transition);
+}
+.bookBtn:hover,
+.bookBtn:focus {
+  background-color: #ffdc86;
 }

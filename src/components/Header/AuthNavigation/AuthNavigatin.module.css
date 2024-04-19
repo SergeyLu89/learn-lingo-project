@@ -1,0 +1,38 @@
+.authNavBtnBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.logBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  transition: color var(--general-transition);
+}
+.logBtn:hover,
+.logBtn:focus {
+  color: var(--main-color);
+}
+.registerBtn {
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  background-color: var(--main-text-color);
+  border-radius: 12px;
+  padding: 14px 39px;
+  border: none;
+  transition: background-color var(--general-transition);
+}
+.registerBtn:hover,
+.registerBtn:focus {
+  background-color: var(--main-color);
+}
