@@ -10,14 +10,11 @@ const favoritesSlice = createSlice({
   reducers: {
     addFavoriteTeacher: (state, action) => {
       state.favoritesTeachers = [...state.favoritesTeachers, action.payload];
-      console.log('ДОБАВИЛ');
     },
     removeFavoriteTeacher: (state, action) => {
-      console.log('TYTA');
       state.favoritesTeachers = state.favoritesTeachers.filter(
         teacher => teacher.id !== action.payload.id
       );
-      console.log('УДАЛИЛ');
     },
   },
 });
