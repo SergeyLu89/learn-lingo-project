@@ -1,9 +1,10 @@
 // import css from './HomePage.module.css';
+import Hero from 'components/Hero/Hero';
 
 const HomePage = () => {
   return (
     <section>
-      <h1>HOME PAGE</h1>
+      <Hero />
     </section>
   );
 };

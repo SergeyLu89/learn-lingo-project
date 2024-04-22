@@ -1,6 +1,6 @@
 import css from './TeachersListItem.module.css';
 import sprite from '../../assets/sprite.svg';
-import { defaultAvatar } from 'helpers/defaultImg';
+import { defaultAvatar } from 'assets/images/defaultImg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavoritesTeachers } from '../../redux/favoritesTeachers/favoritesTeachersSelectors';
 import { selectUserIsLoggedIn } from '../../redux/user/userSelectors';
@@ -147,7 +147,9 @@ const TeachersListItem = ({ teacher }) => {
             <li>
               <p>
                 <span>Conditions: </span>
-                {conditions}
+                {conditions.map(condition => {
+                  return condition + ' ';
+                })}
               </p>
             </li>
           </ul>
