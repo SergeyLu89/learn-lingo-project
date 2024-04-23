@@ -1,5 +1,5 @@
 import css from './Modal.module.css';
-// import { ReactComponent as CrossSvg } from '../../icons/cross.svg';
+import sprite from '../../assets/sprite.svg';
 import { useCallback, useEffect } from 'react';
 
 const Modal = ({ children, isOpen, closeFnc }) => {
@@ -34,7 +34,9 @@ const Modal = ({ children, isOpen, closeFnc }) => {
     <div className={css.backdrop} onClick={onOverlayClick}>
       <div className={css.modal}>
         <button className={css.modalCloseBtn} onClick={closeOnClick}>
-          {/* <CrossSvg width={24} height={24} /> */}X
+          <svg width="32" height="32" aria-label="cross icon">
+            <use href={sprite + '#icon-cross'}></use>
+          </svg>
         </button>
         {children}
       </div>
