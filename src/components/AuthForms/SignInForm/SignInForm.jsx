@@ -1,5 +1,6 @@
 import css from './SignInForm.module.css';
 import sprite from '../../../assets/sprite.svg';
+import toast from 'react-hot-toast';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -27,13 +28,12 @@ const SignInForm = ({ closeFnc }) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
-        console.log('user: ', user);
         dispatch(setUser(user));
       })
       .catch(console.error);
     resetForm();
     closeFnc();
-    // alert('Hello');
+    toast('Welcome');
     navigate('/home');
   };
   return (
@@ -66,7 +66,6 @@ const SignInForm = ({ closeFnc }) => {
               name="password"
               placeholder="Password"
               className={`${css.formInput} ${css.formInputPass}`}
-              // className={css.formInput}
             />
             {showPassword ? (
               <svg

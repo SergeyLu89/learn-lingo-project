@@ -1,5 +1,6 @@
 import css from './TeachersPage.module.css';
 import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import {
   getDatabase,
   ref,
@@ -41,6 +42,9 @@ const TeachersPage = () => {
             });
             setTeachers(prevTeachers => [...prevTeachers, ...fetchedTeachers]);
           } else {
+            toast(`Sorry, we can show you more of it`, {
+              duration: 3000,
+            });
             console.log('No data available');
           }
         },

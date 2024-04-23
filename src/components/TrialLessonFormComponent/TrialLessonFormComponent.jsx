@@ -1,6 +1,7 @@
 import css from './TrialLessonFormComponent.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 const initialValues = {
   reason: '',
@@ -20,9 +21,9 @@ const TrialLessonFormComponent = ({ teacher }) => {
   const { avatar_url, name, surname } = teacher;
 
   const onFormSubmit = ({ name }, { resetForm }) => {
-    console.log('SUMBIT');
-    alert(
-      `${name}, your request for a trial lesson has been accepted. Our manager will contact you soon.`
+    toast.success(
+      `${name}, your request for a trial lesson has been accepted. Our manager will contact you soon.`,
+      { duration: 3000 }
     );
 
     resetForm();

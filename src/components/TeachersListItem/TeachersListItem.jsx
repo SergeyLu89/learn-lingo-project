@@ -11,6 +11,7 @@ import {
 import { useState } from 'react';
 import Modal from 'components/Modal/Modal';
 import TrialLessonFormComponent from 'components/TrialLessonFormComponent/TrialLessonFormComponent';
+import toast, { Toaster } from 'react-hot-toast';
 
 const TeachersListItem = ({ teacher }) => {
   const dispatch = useDispatch();
@@ -114,7 +115,10 @@ const TeachersListItem = ({ teacher }) => {
                 onClick={() => {
                   isLogin
                     ? onFavoriteToggle()
-                    : alert('Only authorized users can add cards to favorites');
+                    : toast(
+                        'Only authorized users can add cards to favorites',
+                        { duration: 3000 }
+                      );
                 }}
               >
                 <svg
@@ -212,6 +216,7 @@ const TeachersListItem = ({ teacher }) => {
           <TrialLessonFormComponent teacher={teacher} />
         </Modal>
       )}
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 };
