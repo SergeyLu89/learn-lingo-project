@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/learn-lingo-project/static/css/main.bace13ad.css",
-    "main.js": "/learn-lingo-project/static/js/main.9bcab964.js",
+    "main.css": "/learn-lingo-project/static/css/main.aac4b528.css",
+    "main.js": "/learn-lingo-project/static/js/main.520e9ae9.js",
     "static/css/710.7f967f04.chunk.css": "/learn-lingo-project/static/css/710.7f967f04.chunk.css",
     "static/js/710.43f95bb2.chunk.js": "/learn-lingo-project/static/js/710.43f95bb2.chunk.js",
     "static/css/861.b1d52d30.chunk.css": "/learn-lingo-project/static/css/861.b1d52d30.chunk.css",
@@ -12,10 +12,10 @@
     "static/media/Roboto-Regular.ttf": "/learn-lingo-project/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/learn-lingo-project/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "static/media/heroImage.png": "/learn-lingo-project/static/media/heroImage.803d381a6365a6f20b6b.png",
-    "static/media/sprite.svg": "/learn-lingo-project/static/media/sprite.1d1f2bddaf103177c70d237724c82a6b.svg",
+    "static/media/sprite.svg": "/learn-lingo-project/static/media/sprite.d4fd8deb9d6ed5851bd96632d6f4661e.svg",
     "index.html": "/learn-lingo-project/index.html",
-    "main.bace13ad.css.map": "/learn-lingo-project/static/css/main.bace13ad.css.map",
-    "main.9bcab964.js.map": "/learn-lingo-project/static/js/main.9bcab964.js.map",
+    "main.aac4b528.css.map": "/learn-lingo-project/static/css/main.aac4b528.css.map",
+    "main.520e9ae9.js.map": "/learn-lingo-project/static/js/main.520e9ae9.js.map",
     "710.7f967f04.chunk.css.map": "/learn-lingo-project/static/css/710.7f967f04.chunk.css.map",
     "710.43f95bb2.chunk.js.map": "/learn-lingo-project/static/js/710.43f95bb2.chunk.js.map",
     "861.b1d52d30.chunk.css.map": "/learn-lingo-project/static/css/861.b1d52d30.chunk.css.map",
@@ -24,7 +24,7 @@
     "413.4352fbe0.chunk.js.map": "/learn-lingo-project/static/js/413.4352fbe0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bace13ad.css",
-    "static/js/main.9bcab964.js"
+    "static/css/main.aac4b528.css",
+    "static/js/main.520e9ae9.js"
   ]
 }
