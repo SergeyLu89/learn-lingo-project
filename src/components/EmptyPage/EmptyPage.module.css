@@ -1,0 +1,15 @@
+.emptyImageBox {
+  display: block;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.emptyImg {
+  /* border-radius: 50%; */
+  margin-bottom: 20px;
+}
+.favoriteDescr {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.33;
+}
