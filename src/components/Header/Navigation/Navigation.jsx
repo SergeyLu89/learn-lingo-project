@@ -4,7 +4,6 @@ import { useAuth } from 'hooks/useAuth';
 
 const Navigatin = () => {
   const isAuth = useAuth();
-  console.log('isAuth: ', isAuth);
 
   return (
     <nav>

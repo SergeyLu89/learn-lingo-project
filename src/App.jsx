@@ -16,7 +16,6 @@ export const App = () => {
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       if (user) {
-        console.log('user: ', user);
         dispatch(setUser(user));
       } else {
         dispatch(removeUser());
