@@ -1,3 +1,47 @@
+.lessonFormWrapper h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.lessonFormWrapperDescr {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(18, 20, 23, 0.8);
+  margin-bottom: 20px;
+}
+.teacherInfoBox {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.teacherAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.teacherNameBox span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--secondary-text-color);
+}
+.teacherNameBox h4 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.lessonFormWrapper h3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.33;
+  margin-bottom: 20px;
+}
+
 .trialLessonForm {
   display: flex;
   flex-direction: column;
@@ -9,4 +53,100 @@
   align-items: flex-start;
   gap: 16px;
   margin-bottom: 40px;
+}
+.formRadioBox label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  text-align: center;
+}
+
+.customRadio span {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.customRadio input[type='radio'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.customRadio span::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(18, 20, 23, 0.2);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.customRadio span::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #f4c550;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.customRadio input[type='radio']:checked + span::after {
+  opacity: 1;
+}
+.customRadio input[type='radio']:checked + span::before {
+  border-color: #f4c550;
+}
+
+.userInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 16px;
+  line-height: 1.37;
+  margin-bottom: 40px;
+}
+.formInput {
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 12px;
+  padding-left: 18px;
+  height: 54px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  width: 519px;
+}
+.formInput:focus {
+  border: 1px solid var(--main-color);
+}
+.formInput::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  color: var(--main-text-color);
+}
+.inputError {
+  font-size: 14px;
+  color: rgba(255, 0, 0, 0.658);
+}
+.formBtn {
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55556;
+  display: block;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 210px;
+  background-color: var(--main-color);
+  transition: background-color var(--general-transition);
+}
+.formBtn:hover,
+.formBtn:focus {
+  background-color: #ffdc86;
 }
