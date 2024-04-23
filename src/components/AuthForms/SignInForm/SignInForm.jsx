@@ -1,10 +1,12 @@
 import css from './SignInForm.module.css';
+import sprite from '../../../assets/sprite.svg';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { setUser } from '../../../redux/user/userReudcer';
+import { useState } from 'react';
 
 const initialValues = {
   email: '',
@@ -18,6 +20,7 @@ const schema = Yup.object({
 const SignInForm = ({ closeFnc }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const onFormSubmit = ({ email, password }, { resetForm }) => {
     const auth = getAuth();
@@ -34,7 +37,7 @@ const SignInForm = ({ closeFnc }) => {
     navigate('/home');
   };
   return (
-    <>
+    <div className={css.loginWrapper}>
       <h2>Log In</h2>
       <p>
         Welcome back! Please enter your credentials to access your account and
@@ -46,16 +49,67 @@ const SignInForm = ({ closeFnc }) => {
         onSubmit={onFormSubmit}
       >
         <Form autoComplete="off" className={css.signInForm}>
-          <Field type="email" name="email" placeholder="Email" />
-          <ErrorMessage name="email" component="span" />
+          <Field
+            type="email"
+            name="email"
+            placeholder="Email"
+            className={css.formInput}
+          />
+          <ErrorMessage
+            name="email"
+            component="span"
+            className={css.inputError}
+          />
+          <div className={css.passwordInputWrapper}>
+            <Field
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              placeholder="Password"
+              className={`${css.formInput} ${css.formInputPass}`}
+              // className={css.formInput}
+            />
+            {showPassword ? (
+              <svg
+                width="20"
+                height="20"
+                aria-label="eye icon"
+                fill="transparent"
+                stroke="#121417"
+                className={css.inputIcon}
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+              >
+                <use href={sprite + '#icon-eye-on'}></use>
+              </svg>
+            ) : (
+              <svg
+                width="20"
+                height="20"
+                aria-label="eye icon"
+                fill="transparent"
+                stroke="#121417"
+                className={css.inputIcon}
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+              >
+                <use href={sprite + '#icon-eye-off'}></use>
+              </svg>
+            )}
+          </div>
+          <ErrorMessage
+            name="password"
+            component="span"
+            className={css.inputError}
+          />
 
-          <Field type="password" name="password" placeholder="Password" />
-          <ErrorMessage name="password" component="span" />
-
-          <button type="submit">Log In</button>
+          <button type="submit" className={css.formBtn}>
+            Log In
+          </button>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };
 export default SignInForm;

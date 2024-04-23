@@ -1,4 +1,76 @@
+.registrationWrapper h2 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.registrationWrapper p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(18, 20, 23, 0.8);
+  margin-bottom: 40px;
+}
 .signUpForm {
   display: flex;
   flex-direction: column;
+  gap: 18px;
+  font-size: 16px;
+  line-height: 1.37;
+}
+.formInput {
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 12px;
+  padding-left: 18px;
+  height: 54px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+}
+.formInput:focus {
+  border: 1px solid var(--main-color);
+}
+
+.formInput:nth-child(n + 3) {
+  margin-bottom: 4px;
+}
+.formInput::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  color: var(--main-text-color);
+}
+.inputError {
+  font-size: 14px;
+  color: rgba(255, 0, 0, 0.658);
+}
+.passwordInputWrapper {
+  position: relative;
+}
+.inputIcon {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  cursor: pointer;
+}
+.formInputPass {
+  max-width: 520px;
+  width: 100%;
+}
+.formBtn {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.55556;
+  display: block;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 210px;
+  background-color: var(--main-color);
+  transition: background-color var(--general-transition);
+}
+.formBtn:hover,
+.formBtn:focus {
+  background-color: #ffdc86;
 }
