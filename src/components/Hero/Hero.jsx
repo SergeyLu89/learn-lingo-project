@@ -1,5 +1,5 @@
 import css from './Hero.module.css';
-import heroImg from '../../assets/images/heroImage.png';
+import * as heroImage from '../../assets/images/heroImage/index';
 import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
@@ -24,7 +24,11 @@ const Hero = () => {
             Get started
           </button>
         </div>
-        <img src={heroImg} alt="girl with macbook" />
+        <img
+          srcSet={`${heroImage.heroImgPng} 1x, ${heroImage.heroImgPng2x} 2x`}
+          src={heroImage.heroImgPng}
+          alt="girl with macbook"
+        />
       </div>
       <ul className={css.herolist}>
         <li className={css.herolistItem}>
