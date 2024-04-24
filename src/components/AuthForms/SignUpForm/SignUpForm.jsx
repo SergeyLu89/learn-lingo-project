@@ -34,9 +34,6 @@ const SignUpForm = ({ closeFnc }) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
-
-        console.log('user: ', user);
-
         updateProfile(user, {
           displayName: name,
         });

@@ -17,13 +17,6 @@ const TeachersPage = () => {
   const [lastKey, setLastKey] = useState('');
 
   const db = getDatabase();
-
-  // const fetchInitialData = () => {
-  //   const dbRef = query(ref(db, 'teachers'), orderByKey(), endAt('4'));
-
-  //   fetchData(dbRef);
-  // };
-
   const dbRef = query(ref(db, 'teachers'), orderByKey(), endAt('3'));
 
   const fetchData = ref => {
@@ -45,7 +38,6 @@ const TeachersPage = () => {
             toast(`Sorry, we can show you more of it`, {
               duration: 3000,
             });
-            console.log('No data available');
           }
         },
         { onlyOnce: true }

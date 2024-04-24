@@ -24,11 +24,11 @@
 .mainTitle span {
   font-style: italic;
   font-weight: 400;
-  /* position: relative;
-  z-index: 100; */
   background: #fbe9ba;
   border-radius: 8px;
   padding: 0 8px;
+  /* position: relative;
+  z-index: 100; */
 }
 /* .mainTitle span::before {
   content: '';
