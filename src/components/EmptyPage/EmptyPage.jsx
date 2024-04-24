@@ -8,6 +8,7 @@ const EmptyPage = () => {
         srcSet={`${heroImage.heroImgPng} 1x, ${heroImage.heroImgPng2x} 2x`}
         src={heroImage.heroImgPng}
         alt="girl with macbook"
+        className={css.emptyImg}
       />
       <p className={css.favoriteDescr}>
         You don't have any favorite teachers yet
