@@ -2,16 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  min-width: 448px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* .headerNavLink {
-  transition: background-color var(--general-transition);
-}
-.headerNavLink:hover,
-.headerNavLink:focus {
-  color: #0b44cd;
-}
-.active {
-  color: #0b44cd;
-} */

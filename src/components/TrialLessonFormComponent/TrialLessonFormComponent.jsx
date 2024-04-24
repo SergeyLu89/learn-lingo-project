@@ -61,7 +61,7 @@ const TrialLessonFormComponent = ({ teacher }) => {
         <Form autoComplete="off" className={css.trialLessonForm}>
           <div className={css.formRadioBox}>
             <label className={css.customRadio}>
-              <Field type="radio" name="reason" value="carier" checked />
+              <Field type="radio" name="reason" value="carier" />
               <span>Career and business</span>
             </label>
             <label className={css.customRadio}>
@@ -80,6 +80,14 @@ const TrialLessonFormComponent = ({ teacher }) => {
               <Field type="radio" name="reason" value="hobby" />
               <span>Culture, travel or hobby</span>
             </label>
+            <ErrorMessage
+              name="reason"
+              render={({ message }) => (
+                <span className={css.customErrorMessage}>
+                  {message} Please select one of the options.
+                </span>
+              )}
+            />
           </div>
           <div className={css.userInfoWrapper}>
             <Field

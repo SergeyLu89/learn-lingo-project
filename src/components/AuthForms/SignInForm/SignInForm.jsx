@@ -25,12 +25,16 @@ const SignInForm = ({ closeFnc }) => {
 
   const onFormSubmit = ({ email, password }, { resetForm }) => {
     const auth = getAuth();
+
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
         dispatch(setUser(user));
       })
-      .catch(console.error);
+      .catch(error => {
+        console.error(error);
+        alert('Wrong email or password');
+      });
     resetForm();
     closeFnc();
     toast('Welcome');

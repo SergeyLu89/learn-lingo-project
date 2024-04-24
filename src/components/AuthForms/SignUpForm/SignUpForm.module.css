@@ -48,6 +48,7 @@
 }
 .passwordInputWrapper {
   position: relative;
+  display: flex;
 }
 .inputIcon {
   position: absolute;
@@ -66,7 +67,9 @@
   display: block;
   border: none;
   border-radius: 12px;
-  padding: 16px 210px;
+  white-space: nowrap;
+  padding-top: 16px;
+  padding-bottom: 16px;
   background-color: var(--main-color);
   transition: background-color var(--general-transition);
 }

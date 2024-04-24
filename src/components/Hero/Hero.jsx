@@ -24,11 +24,13 @@ const Hero = () => {
             Get started
           </button>
         </div>
-        <img
-          srcSet={`${heroImage.heroImgPng} 1x, ${heroImage.heroImgPng2x} 2x`}
-          src={heroImage.heroImgPng}
-          alt="girl with macbook"
-        />
+        <div className={css.imageWrapper}>
+          <img
+            srcSet={`${heroImage.heroImgPng} 1x, ${heroImage.heroImgPng2x} 2x`}
+            src={heroImage.heroImgPng}
+            alt="girl with macbook"
+          />
+        </div>
       </div>
       <ul className={css.herolist}>
         <li className={css.herolistItem}>

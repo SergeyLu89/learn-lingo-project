@@ -1,8 +1,9 @@
 .teachersListItem {
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
   max-width: 1184px;
   width: 100%;
   box-sizing: border-box;
@@ -29,6 +30,7 @@
   border-radius: 50%;
   overflow: hidden;
   padding: 12px;
+  margin-bottom: 8px;
 }
 .avatarImg {
   border-radius: 50%;
@@ -44,8 +46,10 @@
 }
 .languagesBox {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 18px;
   margin-bottom: 32px;
 }
 .nameBox p {
@@ -57,7 +61,7 @@
 
 .lessonsInfoBox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   max-width: 697px;
   width: 100%;
@@ -65,6 +69,10 @@
 
 .lessonsInfoList {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 8px;
 }
 .lessonsInfoListItem {
   display: flex;
@@ -145,6 +153,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .levelListItem {
